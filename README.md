@@ -2,4 +2,4 @@
 
 ![React Fitness Application](https://i.ibb.co/Yt9spGc/image.png)
 
-## Launch your development career with project-based coaching - https://www.jsmastery.pro
+### About Fitness Website. Uses the ExerciseDB API which gives access to over 1300 exercises with individual exercise data and animated demonstrations.
