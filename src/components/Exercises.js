@@ -9,6 +9,7 @@ import Loader from './Loader';
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(8);
+  const [currentExercises, setCurrentExercises] = useState(0)
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -29,7 +30,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
+  
+  useEffect(() => {
+    setCurrentExercises(exercises.slice(indexOfFirstExercise, indexOfLastExercise));
+  }, [])
+  
 
   const paginate = (event, value) => {
     setCurrentPage(value);
